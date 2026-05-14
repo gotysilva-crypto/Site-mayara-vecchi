@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Dra. Mayara Vecchi | Estética & Harmonização Facial</title>
+  <meta name="description" content="Clínica especializada em estética avançada e harmonização facial em Santo André, SP. Agende sua consulta." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --nude: #e8d5c4;
+      --nude-dark: #c9a98a;
+      --off-white: #faf7f4;
+      --charcoal: #2a2420;
+      --warm-gray: #7a6e68;
+      --gold: #b8934a;
+      --line: rgba(42,36,32,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--off-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 4rem;
+      background: rgba(250,247,244,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-cta {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .nav-cta:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 5rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--charcoal);
+      margin-bottom: 2rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--nude-dark);
+    }
+    .hero-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--warm-gray);
+      max-width: 380px;
+      margin-bottom: 3rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--charcoal);
+      color: var(--off-white);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      transition: background 0.3s;
+      width: fit-content;
+    }
+    .btn-primary:hover { background: var(--gold); }
+
+    .hero-right {
+      position: relative;
+      background: var(--nude);
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #e8d5c4 0%, #d4b896 60%, #c9a98a 100%);
+    }
+    .hero-ornament {
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.18);
+      line-height: 1;
+      right: -2rem;
+      bottom: -2rem;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-badge {
+      position: absolute;
+      top: 3rem; left: 3rem;
+      background: white;
+      padding: 1.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 5rem; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--charcoal); color: var(--off-white); }
+    .services .section-label { color: var(--nude); }
+    .services .section-title { color: var(--off-white); margin-bottom: 3.5rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s;
+    }
+    .service-card:hover { background: rgba(255,255,255,0.08); }
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--nude-dark);
+      opacity: 0.5;
+      margin-bottom: 1.5rem;
+    }
+    .service-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.75rem;
+    }
+    .service-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(250,247,244,0.55);
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      background: var(--off-white);
+    }
+    .about-visual {
+      position: relative;
+      height: 480px;
+      background: var(--nude);
+    }
+    .about-visual::after {
+      content: '';
+      position: absolute;
+      top: 2rem; right: -2rem;
+      width: 100%; height: 100%;
+      border: 1px solid var(--nude-dark);
+      z-index: -1;
+    }
+    .about-quote {
+      position: absolute;
+      bottom: -2rem; left: -2rem;
+      background: var(--off-white);
+      padding: 1.5rem 2rem;
+      border-left: 3px solid var(--gold);
+      max-width: 280px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+    .about-text .section-title { margin-bottom: 1.5rem; }
+    .about-p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--warm-gray);
+      margin-bottom: 1rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--nude);
+      text-align: center;
+    }
+    .contact .section-title { margin-bottom: 0.75rem; }
+    .contact-sub {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      margin-bottom: 3rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .contact-item-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .contact-item-val {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(250,247,244,0.5);
+      padding: 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 1rem;
+    }
+    .footer-legal {
+      font-size: 0.7rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .footer-legal strong { color: rgba(250,247,244,0.75); font-weight: 400; }
+    .footer-copy {
+      font-size: 0.65rem;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { opacity: 0; animation: fadeUp 0.7s 0.1s forwards; }
+    .hero-title   { opacity: 0; animation: fadeUp 0.7s 0.25s forwards; }
+    .hero-desc    { opacity: 0; animation: fadeUp 0.7s 0.4s forwards; }
+    .btn-primary  { opacity: 0; animation: fadeUp 0.7s 0.55s forwards; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 300px; }
+      .hero-left { padding: 4rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .about-visual { height: 280px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      footer { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+      .footer-copy { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Dra. Mayara Vecchi</a>
+    <a href="https://wa.me/5511000000000" class="nav-cta">Agendar consulta</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Estética &amp; Harmonização Facial — Santo André, SP</p>
+      <h1 class="hero-title">
+        Realce sua<br>
+        beleza <em>natural</em>
+      </h1>
+      <p class="hero-desc">
+        Tratamentos estéticos avançados com foco em resultados naturais e
+        duradouros. Cada procedimento é cuidadosamente personalizado para
+        valorizar a sua identidade.
+      </p>
+      <a href="https://wa.me/5511000000000" class="btn-primary">Agendar consulta</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-ornament">M</div>
+      <div class="hero-badge">
+        <strong>Santo André</strong>
+        São Paulo, SP
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="servicos">
+    <p class="section-label">Especialidades</p>
+    <h2 class="section-title">Procedimentos<br>realizados</h2>
+    <div style="height:3rem"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <p class="service-name">Harmonização Facial</p>
+        <p class="service-desc">Técnicas precisas com bioestimuladores e preenchimentos para reequilíbrio das proporções faciais.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <p class="service-name">Toxina Botulínica</p>
+        <p class="service-desc">Tratamento de linhas de expressão com resultados naturais e longevidade clínica comprovada.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <p class="service-name">Skincare Clínico</p>
+        <p class="service-desc">Protocolos personalizados de cuidados com a pele para resultados progressivos e sustentáveis.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <p class="service-name">Bioestimuladores</p>
+        <p class="service-desc">Estimulação de colágeno para rejuvenescimento profundo com textura e firmeza aprimoradas.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <p class="service-name">Tratamento Labial</p>
+        <p class="service-desc">Definição e volume labial com técnicas que respeitam a harmonia natural do seu rosto.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <p class="service-name">Consultoria Estética</p>
+        <p class="service-desc">Avaliação completa e plano de tratamento personalizado para os seus objetivos estéticos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="sobre">
+    <div class="about-visual">
+      <div class="about-quote">
+        "Cada rosto conta uma história única que merece ser valorizada."
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label">Sobre a clínica</p>
+      <h2 class="section-title">Excelência e cuidado em cada detalhe</h2>
+      <div style="height:1.5rem"></div>
+      <p class="about-p">
+        A Clínica Dra. Mayara Vecchi é especializada em estética avançada e harmonização facial,
+        oferecendo tratamentos personalizados com tecnologia de ponta e protocolos seguros.
+      </p>
+      <p class="about-p">
+        Localizada em Santo André, SP, a clínica combina ciência e arte para revelar a melhor
+        versão de cada paciente, com foco em resultados naturais e bem-estar.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contato">
+    <p class="section-label">Contato</p>
+    <h2 class="section-title">Agende sua consulta</h2>
+    <p class="contact-sub">Entre em contato e dê o primeiro passo para o seu cuidado.</p>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-item-label">Localização</p>
+        <p class="contact-item-val">Santo André, SP</p>
+      </div>
+      <div>
+        <p class="contact-item-label">WhatsApp</p>
+        <p class="contact-item-val">(11) 0000-0000</p>
+      </div>
+      <div>
+        <p class="contact-item-label">Instagram</p>
+        <p class="contact-item-val">@dra.mayaravecchi</p>
+      </div>
+    </div>
+    <a href="https://wa.me/5511000000000" class="btn-primary">Falar pelo WhatsApp</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <p class="footer-logo">Clínica Dra. Mayara Vecchi</p>
+      <p class="footer-legal">
+        <strong>CLINICA MAYARA VECCHI LTDA - ME</strong><br>
+        CNPJ: 61.785.174/0001-00<br>
+        Santo André, São Paulo — SP, Brasil<br>
+        Atividades de estética e outros serviços de cuidados com a beleza
+      </p>
+    </div>
+    <div class="footer-copy">
+      © 2025 Clínica Dra. Mayara Vecchi<br>
+      Todos os direitos reservados
+    </div>
+  </footer>
+
+</body>
+</html>
