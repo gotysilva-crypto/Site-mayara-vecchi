@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clínica Dra. Mayara Vecchi | Estética & Harmonização Facial</title>
-  <meta name="description" content="Clínica especializada em estética avançada e harmonização facial em Santo André, SP. Agende sua consulta." />
+  <title>Dra. Mayara Vecchi | Contorno Facial Perfeito — Santo André, SP</title>
+  <meta name="description" content="Especialista em Reestruturação e Contorno Facial em Santo André, SP. Ácido hialurônico, toxina botulínica e bioestimulador de colágeno. Agende sua consulta." />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,18 +20,11 @@
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
 
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--off-white);
-      color: var(--charcoal);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.4rem 4rem;
       background: rgba(250,247,244,0.92);
@@ -40,287 +33,233 @@
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      text-decoration: none;
+      font-size: 1.15rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
     }
     .nav-cta {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--charcoal); text-decoration: none;
+      border-bottom: 1px solid var(--gold); padding-bottom: 2px;
       transition: color 0.2s;
     }
     .nav-cta:hover { color: var(--gold); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1fr 1fr;
       padding-top: 80px;
     }
     .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: flex; flex-direction: column; justify-content: center;
       padding: 6rem 4rem 6rem 5rem;
     }
     .hero-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
+      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      color: var(--charcoal);
-      margin-bottom: 2rem;
+      font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300;
+      line-height: 1.05; color: var(--charcoal); margin-bottom: 2rem;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--nude-dark);
-    }
+    .hero-title em { font-style: italic; color: var(--nude-dark); }
     .hero-desc {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--warm-gray);
-      max-width: 380px;
-      margin-bottom: 3rem;
+      font-size: 0.9rem; font-weight: 300; line-height: 1.8;
+      color: var(--warm-gray); max-width: 380px; margin-bottom: 3rem;
     }
     .btn-primary {
-      display: inline-block;
-      background: var(--charcoal);
-      color: var(--off-white);
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      transition: background 0.3s;
-      width: fit-content;
+      display: inline-block; background: var(--charcoal); color: var(--off-white);
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      text-decoration: none; padding: 1rem 2.5rem;
+      transition: background 0.3s; width: fit-content;
     }
     .btn-primary:hover { background: var(--gold); }
 
     .hero-right {
-      position: relative;
-      background: var(--nude);
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-    .hero-right::before {
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .hero-right::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(135deg, #e8d5c4 0%, #d4b896 60%, #c9a98a 100%);
-    }
-    .hero-ornament {
-      position: absolute;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.18);
-      line-height: 1;
-      right: -2rem;
-      bottom: -2rem;
-      pointer-events: none;
-      user-select: none;
+      background: linear-gradient(to right, rgba(250,247,244,0.15) 0%, transparent 40%);
     }
     .hero-badge {
-      position: absolute;
-      top: 3rem; left: 3rem;
-      background: white;
-      padding: 1.5rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      opacity: 0;
-      animation: fadeUp 0.8s 0.6s forwards;
+      position: absolute; bottom: 3rem; left: 3rem; z-index: 2;
+      background: white; padding: 1.5rem;
+      font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--warm-gray); box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
     }
     .hero-badge strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 0.25rem;
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.25rem;
     }
 
-    /* ── SECTION BASE ── */
+    /* SECTION BASE */
     section { padding: 6rem 5rem; }
-
     .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
+      font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--charcoal);
+      font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300;
+      line-height: 1.15; color: var(--charcoal);
     }
 
-    /* ── SERVICES ── */
+    /* SERVICES */
     .services { background: var(--charcoal); color: var(--off-white); }
     .services .section-label { color: var(--nude); }
     .services .section-title { color: var(--off-white); margin-bottom: 3.5rem; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
     .service-card {
-      background: rgba(255,255,255,0.04);
-      padding: 2.5rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: background 0.3s;
+      background: rgba(255,255,255,0.04); padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.06); transition: background 0.3s;
     }
     .service-card:hover { background: rgba(255,255,255,0.08); }
     .service-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--nude-dark);
-      opacity: 0.5;
-      margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;
+      font-weight: 300; color: var(--nude-dark); opacity: 0.5; margin-bottom: 1.5rem;
     }
     .service-name {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      margin-bottom: 0.75rem;
+      font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--off-white); margin-bottom: 0.75rem;
     }
     .service-desc {
-      font-size: 0.82rem;
-      font-weight: 300;
-      line-height: 1.7;
+      font-size: 0.82rem; font-weight: 300; line-height: 1.7;
       color: rgba(250,247,244,0.55);
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      background: var(--off-white);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center; background: var(--off-white);
     }
-    .about-visual {
-      position: relative;
-      height: 480px;
-      background: var(--nude);
+    .about-photos {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
     }
-    .about-visual::after {
-      content: '';
-      position: absolute;
-      top: 2rem; right: -2rem;
-      width: 100%; height: 100%;
-      border: 1px solid var(--nude-dark);
-      z-index: -1;
+    .about-photos img {
+      width: 100%; aspect-ratio: 3/4;
+      object-fit: cover; object-position: center top;
+      display: block;
     }
-    .about-quote {
-      position: absolute;
-      bottom: -2rem; left: -2rem;
-      background: var(--off-white);
-      padding: 1.5rem 2rem;
-      border-left: 3px solid var(--gold);
-      max-width: 280px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--charcoal);
-      line-height: 1.5;
+    .about-photos img:first-child {
+      grid-column: 1 / -1; aspect-ratio: 16/9;
     }
     .about-text .section-title { margin-bottom: 1.5rem; }
     .about-p {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 1.9;
-      color: var(--warm-gray);
-      margin-bottom: 1rem;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.9;
+      color: var(--warm-gray); margin-bottom: 1rem;
+    }
+    .about-quote-inline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--charcoal); border-left: 3px solid var(--gold);
+      padding-left: 1.25rem; margin: 2rem 0; line-height: 1.6;
     }
 
-    /* ── CONTACT ── */
-    .contact {
-      background: var(--nude);
-      text-align: center;
-    }
-    .contact .section-title { margin-bottom: 0.75rem; }
-    .contact-sub {
-      font-size: 0.88rem;
-      font-weight: 300;
-      color: var(--warm-gray);
+    /* GALLERY */
+    .gallery { background: var(--nude); }
+    .gallery .section-title { margin-bottom: 0.5rem; }
+    .gallery-sub {
+      font-size: 0.85rem; font-weight: 300; color: var(--warm-gray);
       margin-bottom: 3rem;
     }
-    .contact-grid {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; cursor: pointer;
+      aspect-ratio: 3/4;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-item-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(42,36,32,0.7));
+      color: white; font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; padding: 1.5rem 0.75rem 0.75rem;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-item-label { opacity: 1; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(42,36,32,0.95);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      object-fit: contain; display: block;
+    }
+    .lightbox-close {
+      position: absolute; top: 2rem; right: 2rem;
+      color: white; font-size: 2rem; cursor: pointer;
+      background: none; border: none; line-height: 1;
+    }
+    .lightbox-prev, .lightbox-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: white; font-size: 2rem; cursor: pointer;
+      background: none; border: none; padding: 1rem;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .lightbox-prev:hover, .lightbox-next:hover { opacity: 1; }
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+
+    /* CONTACT */
+    .contact { background: var(--charcoal); text-align: center; }
+    .contact .section-label { color: var(--nude); }
+    .contact .section-title { color: var(--off-white); margin-bottom: 0.75rem; }
+    .contact-sub {
+      font-size: 0.88rem; font-weight: 300;
+      color: rgba(250,247,244,0.55); margin-bottom: 3rem;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; max-width: 860px; margin: 0 auto 3rem;
     }
     .contact-item-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
     }
     .contact-item-val {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--charcoal);
+      font-size: 0.85rem; font-weight: 400;
+      color: rgba(250,247,244,0.85); line-height: 1.6;
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      background: var(--charcoal);
-      color: rgba(250,247,244,0.5);
+      background: #1a1410; color: rgba(250,247,244,0.4);
       padding: 3rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 2rem;
+      display: grid; grid-template-columns: 1fr auto;
+      align-items: end; gap: 2rem;
     }
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      margin-bottom: 1rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--off-white); margin-bottom: 1rem;
     }
-    .footer-legal {
-      font-size: 0.7rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-    .footer-legal strong { color: rgba(250,247,244,0.75); font-weight: 400; }
-    .footer-copy {
-      font-size: 0.65rem;
-      text-align: right;
-      line-height: 1.8;
-    }
+    .footer-legal { font-size: 0.7rem; line-height: 1.8; font-weight: 300; }
+    .footer-legal strong { color: rgba(250,247,244,0.7); font-weight: 400; }
+    .footer-copy { font-size: 0.65rem; text-align: right; line-height: 1.8; }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -330,17 +269,17 @@
     .hero-desc    { opacity: 0; animation: fadeUp 0.7s 0.4s forwards; }
     .btn-primary  { opacity: 0; animation: fadeUp 0.7s 0.55s forwards; }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 1.2rem 1.5rem; }
       .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 300px; }
+      .hero-right { min-height: 60vw; }
       .hero-left { padding: 4rem 1.5rem; }
       section { padding: 4rem 1.5rem; }
       .services-grid { grid-template-columns: 1fr; }
       .about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-      .about-visual { height: 280px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       footer { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
       .footer-copy { text-align: left; }
     }
@@ -348,29 +287,37 @@
 </head>
 <body>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <button class="lightbox-prev" onclick="changeLightbox(-1)">‹</button>
+    <img id="lightbox-img" src="" alt="Resultado" />
+    <button class="lightbox-next" onclick="changeLightbox(1)">›</button>
+  </div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Dra. Mayara Vecchi</a>
-    <a href="https://wa.me/5511000000000" class="nav-cta">Agendar consulta</a>
+    <a href="https://wa.me/5511947667206" class="nav-cta">Agendar consulta</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Estética &amp; Harmonização Facial — Santo André, SP</p>
+      <p class="hero-eyebrow">Especialista em Contorno Facial — Santo André, SP</p>
       <h1 class="hero-title">
-        Realce sua<br>
-        beleza <em>natural</em>
+        Vou te deixar com o<br>
+        Contorno Facial <em>Perfeito</em>
       </h1>
       <p class="hero-desc">
-        Tratamentos estéticos avançados com foco em resultados naturais e
-        duradouros. Cada procedimento é cuidadosamente personalizado para
-        valorizar a sua identidade.
+        Especialista em Reestruturação e Contorno Facial, com técnicas
+        avançadas de ácido hialurônico, toxina botulínica e bioestimulador
+        de colágeno para realçar sua beleza natural.
       </p>
-      <a href="https://wa.me/5511000000000" class="btn-primary">Agendar consulta</a>
+      <a href="https://wa.me/5511947667206" class="btn-primary">Agendar consulta</a>
     </div>
     <div class="hero-right">
-      <div class="hero-ornament">M</div>
+      <img src="img/foto-mayara-1.jpg" alt="Dra. Mayara Vecchi" />
       <div class="hero-badge">
         <strong>Santo André</strong>
         São Paulo, SP
@@ -386,56 +333,111 @@
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
-        <p class="service-name">Harmonização Facial</p>
-        <p class="service-desc">Técnicas precisas com bioestimuladores e preenchimentos para reequilíbrio das proporções faciais.</p>
+        <p class="service-name">Reestruturação Facial</p>
+        <p class="service-desc">Reequilíbrio completo das proporções faciais com técnicas precisas para um resultado natural e harmonioso.</p>
       </div>
       <div class="service-card">
         <div class="service-num">02</div>
-        <p class="service-name">Toxina Botulínica</p>
-        <p class="service-desc">Tratamento de linhas de expressão com resultados naturais e longevidade clínica comprovada.</p>
+        <p class="service-name">Contorno Facial</p>
+        <p class="service-desc">Definição e modelagem do contorno do rosto com ácido hialurônico para realçar suas melhores características.</p>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
-        <p class="service-name">Skincare Clínico</p>
-        <p class="service-desc">Protocolos personalizados de cuidados com a pele para resultados progressivos e sustentáveis.</p>
+        <p class="service-name">Ácido Hialurônico</p>
+        <p class="service-desc">Preenchimento e volumização com resultados precisos, naturais e duradouros adaptados a cada rosto.</p>
       </div>
       <div class="service-card">
         <div class="service-num">04</div>
-        <p class="service-name">Bioestimuladores</p>
-        <p class="service-desc">Estimulação de colágeno para rejuvenescimento profundo com textura e firmeza aprimoradas.</p>
+        <p class="service-name">Toxina Botulínica</p>
+        <p class="service-desc">Tratamento de linhas de expressão com resultados naturais, suavizando sem perder a expressividade do rosto.</p>
       </div>
       <div class="service-card">
         <div class="service-num">05</div>
-        <p class="service-name">Tratamento Labial</p>
-        <p class="service-desc">Definição e volume labial com técnicas que respeitam a harmonia natural do seu rosto.</p>
+        <p class="service-name">Bioestimulador de Colágeno</p>
+        <p class="service-desc">Estimulação profunda do colágeno para rejuvenescimento, firmeza e melhora progressiva da textura da pele.</p>
       </div>
       <div class="service-card">
         <div class="service-num">06</div>
         <p class="service-name">Consultoria Estética</p>
-        <p class="service-desc">Avaliação completa e plano de tratamento personalizado para os seus objetivos estéticos.</p>
+        <p class="service-desc">Avaliação facial completa e plano de tratamento personalizado para alcançar seus objetivos com segurança.</p>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="about" id="sobre">
-    <div class="about-visual">
-      <div class="about-quote">
-        "Cada rosto conta uma história única que merece ser valorizada."
-      </div>
+    <div class="about-photos">
+      <img src="img/foto-mayara-2.jpg" alt="Dra. Mayara Vecchi" />
+      <img src="img/foto-mayara-3.jpg" alt="Dra. Mayara Vecchi" />
+      <img src="img/foto-mayara-4.jpg" alt="Dra. Mayara Vecchi" />
     </div>
     <div class="about-text">
       <p class="section-label">Sobre a clínica</p>
-      <h2 class="section-title">Excelência e cuidado em cada detalhe</h2>
+      <h2 class="section-title">Excelência em harmonização facial</h2>
       <div style="height:1.5rem"></div>
       <p class="about-p">
-        A Clínica Dra. Mayara Vecchi é especializada em estética avançada e harmonização facial,
-        oferecendo tratamentos personalizados com tecnologia de ponta e protocolos seguros.
+        A Clínica Dra. Mayara Vecchi é especializada em Reestruturação e Contorno Facial,
+        utilizando os melhores protocolos e produtos do mercado para resultados que respeitam
+        e valorizam a identidade de cada paciente.
       </p>
       <p class="about-p">
-        Localizada em Santo André, SP, a clínica combina ciência e arte para revelar a melhor
-        versão de cada paciente, com foco em resultados naturais e bem-estar.
+        Localizada no Campestre, em Santo André — SP, a clínica oferece um ambiente acolhedor
+        e tratamentos personalizados com foco em segurança, naturalidade e bem-estar.
       </p>
+      <div class="about-quote-inline">
+        "Vou te deixar com o Contorno Facial Perfeito."
+        <br>
+        <span style="font-size:0.75rem; font-style:normal; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold);">— Dra. Mayara Vecchi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="resultados">
+    <p class="section-label">Resultados</p>
+    <h2 class="section-title">Antes &amp; Depois</h2>
+    <p class="gallery-sub">Clique nas fotos para ampliar</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="img/antes-depois-1.jpg" alt="Resultado 1" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="img/antes-depois-2.jpg" alt="Resultado 2" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="img/antes-depois-3.jpg" alt="Resultado 3" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="img/antes-depois-4.jpg" alt="Resultado 4" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="img/antes-depois-5.jpg" alt="Resultado 5" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="img/antes-depois-6.jpg" alt="Resultado 6" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="img/antes-depois-7.jpg" alt="Resultado 7" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="img/antes-depois-8.jpg" alt="Resultado 8" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="img/antes-depois-9.jpg" alt="Resultado 9" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="img/antes-depois-10.jpg" alt="Resultado 10" />
+        <div class="gallery-item-label">Ver resultado</div>
+      </div>
     </div>
   </section>
 
@@ -443,22 +445,26 @@
   <section class="contact" id="contato">
     <p class="section-label">Contato</p>
     <h2 class="section-title">Agende sua consulta</h2>
-    <p class="contact-sub">Entre em contato e dê o primeiro passo para o seu cuidado.</p>
+    <p class="contact-sub">Entre em contato e dê o primeiro passo para o seu contorno facial perfeito.</p>
     <div class="contact-grid">
       <div>
-        <p class="contact-item-label">Localização</p>
-        <p class="contact-item-val">Santo André, SP</p>
+        <p class="contact-item-label">Endereço</p>
+        <p class="contact-item-val">Rua das Figueiras, 2001<br>Campestre — Santo André, SP</p>
       </div>
       <div>
         <p class="contact-item-label">WhatsApp</p>
-        <p class="contact-item-val">(11) 0000-0000</p>
+        <p class="contact-item-val">(11) 94766-7206</p>
       </div>
       <div>
         <p class="contact-item-label">Instagram</p>
         <p class="contact-item-val">@dra.mayaravecchi</p>
       </div>
+      <div>
+        <p class="contact-item-label">Especialidade</p>
+        <p class="contact-item-val">Harmonização<br>Facial</p>
+      </div>
     </div>
-    <a href="https://wa.me/5511000000000" class="btn-primary">Falar pelo WhatsApp</a>
+    <a href="https://wa.me/5511947667206" class="btn-primary">Falar pelo WhatsApp</a>
   </section>
 
   <!-- FOOTER -->
@@ -468,7 +474,7 @@
       <p class="footer-legal">
         <strong>CLINICA MAYARA VECCHI LTDA - ME</strong><br>
         CNPJ: 61.785.174/0001-00<br>
-        Santo André, São Paulo — SP, Brasil<br>
+        Rua das Figueiras, 2001 — Campestre, Santo André — SP, Brasil<br>
         Atividades de estética e outros serviços de cuidados com a beleza
       </p>
     </div>
@@ -477,6 +483,39 @@
       Todos os direitos reservados
     </div>
   </footer>
+
+  <script>
+    const images = [
+      'img/antes-depois-1.jpg','img/antes-depois-2.jpg','img/antes-depois-3.jpg',
+      'img/antes-depois-4.jpg','img/antes-depois-5.jpg','img/antes-depois-6.jpg',
+      'img/antes-depois-7.jpg','img/antes-depois-8.jpg','img/antes-depois-9.jpg',
+      'img/antes-depois-10.jpg'
+    ];
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      document.getElementById('lightbox-img').src = images[current];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function changeLightbox(dir) {
+      current = (current + dir + images.length) % images.length;
+      document.getElementById('lightbox-img').src = images[current];
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') changeLightbox(-1);
+      if (e.key === 'ArrowRight') changeLightbox(1);
+    });
+  </script>
 
 </body>
 </html>
