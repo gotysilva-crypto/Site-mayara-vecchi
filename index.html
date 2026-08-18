@@ -334,12 +334,6 @@ section { padding: 6rem 5rem; }
   transition: transform 0.5s;
 }
 .marquee-item:hover img { transform: scale(1.03); }
-.marquee-item-label {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(42,36,32,0.75));
-  color: white; font-size: 0.62rem; letter-spacing: 0.2em;
-  text-transform: uppercase; padding: 2rem 0.75rem 0.75rem;
-}
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -688,8 +682,7 @@ loopImages.forEach((item, i) => {
   const div = document.createElement('div');
   div.className = 'marquee-item';
   div.onclick = () => openLightbox(item.src);
-  div.innerHTML = `<img src="${item.src}" alt="${item.label}" loading="lazy" />
-    <div class="marquee-item-label">${item.label}</div>`;
+  div.innerHTML = `<img src="${item.src}" alt="${item.label}" loading="lazy" />`;
   track.appendChild(div);
 });
 
